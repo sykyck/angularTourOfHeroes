@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero.model';
-import { HEROES } from './mockheroes';
+import { getRootComponents } from '@angular/core/src/render3/discovery_utils';
 
 @Component({
   selector: 'app-heroes',
@@ -9,12 +9,18 @@ import { HEROES } from './mockheroes';
 })
 
 export class HeroesComponent implements OnInit {
-  public selectedhero:Hero = new Hero();
+  public selectedHero:Hero;
   public heroes:Hero[] = [];
 
   constructor() { 
-    this.selectedhero.name="Windstorm";
-    this.selectedhero.id = 2;
+    this.heroes.push({ id: 11, name: 'Mr. Nice' });
+    this.heroes.push({ id: 12, name: 'Narco' });
+    this.heroes.push({ id: 13, name: 'Bombasto' });
+    this.heroes.push({ id: 2, name: 'Windstorm' });
+  }
+
+  onSelect(clickedHero:Hero):void{
+     this.selectedHero = clickedHero;
   }
 
   ngOnInit() {
