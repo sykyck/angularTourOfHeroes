@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from './hero.model';
+import { Hero } from '../hero-models/hero.model';
 import { getRootComponents } from '@angular/core/src/render3/discovery_utils';
 
 @Component({
